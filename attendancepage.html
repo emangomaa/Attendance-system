@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <title>Attandance system | attendance</title>
+    <style>
+      .attendancepage {
+        background-image: url(images/4.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: white;
+      }
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.699);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+      }
+      div.col-5 {
+        width: 45%;
+        border: 1px solid rgb(190, 187, 187);
+        /* border-radius: 30px; */
+        z-index: 2;
+      }
+      input.form-control {
+        background-color: transparent !important;
+        color: white !important;
+      }
+      nav {
+        z-index: 2;
+      }
+      .nav-link:hover,
+      .nav-link:focus {
+        color: green;
+      }
+      .nav-link {
+        color: white;
+      }
+      .errorstyle {
+        color: red !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="attendancepage">
+      <div class="overlay"></div>
+      <nav class="navbar navbar-expand-md pt-4">
+        <div class="container">
+          <a
+            class="navbar-brand"
+            href="#"
+            style="color: green; font-weight: bold"
+            >Attendance System</a
+          >
+          <button
+            class="navbar-toggler bg-success"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="homepage.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="attendancepage.html">Attendance</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div
+          class="row justify-content-center align-items-center"
+          style="height: 90vh"
+        >
+          <form
+            class="col-8 col-md-6 needs-validation"
+            novalidate
+            style="z-index: 2"
+          >
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="first name"
+                required
+              />
+              <label>Username</label>
+              <div class="errorstyle" style="display: none">
+                invalid Username
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-8 col-md-6 mt-4">
+                <input
+                  type="submit"
+                  class="btn btn-success"
+                  value="Confirm Attendance"
+                  onclick="return false"
+                />
+              </div>
+            </div>
+          </form>
+          <div
+            class="col-8 col-md-8 text-center p-3 empinfo"
+            style="z-index: 2; display: none"
+          >
+            <p><b>Employee Name : </b><span id="empfullname"></span></p>
+            <p><b>Attendance Time : </b><span id="attendtime"></span></p>
+            <div class="mt-4">
+              <button type="button" class="btn btn-success" style="width: 80px">
+                Ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/JQuery-3.3.1.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/attendance.js"></script>
+  </body>
+</html>

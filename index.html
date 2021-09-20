@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>Attandance project</title>
+    <style>
+      .homepage {
+        background-image: url(images/1.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: white;
+      }
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.699);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+      }
+      .form-floating > label {
+        padding: 1rem 1.5rem;
+      }
+      div.col-auto {
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+        font-size: 1.3rem;
+      }
+      .border-bottom {
+        border-bottom: 2px solid rgb(11, 69, 231);
+      }
+      div.maindiv {
+        z-index: 2;
+      }
+      input.form-control {
+        border-radius: 10px;
+        box-shadow: 0px 0px 0px;
+      }
+      input.form-control {
+        background-color: transparent !important;
+        color: white !important;
+      }
+      .invalid-feedback {
+        color: red;
+      }
+      .errorstyle {
+        border: 1px solid red !important;
+      }
+      .fnamediv,
+      .lnamediv {
+        display: none;
+      }
+      nav {
+        z-index: 2;
+      }
+      .brand-link,
+      .nav-link {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="homepage">
+      <div class="overlay"></div>
+      <nav class="navbar navbar-expand-md pt-4">
+        <div class="container">
+          <a class="navbar-brand" href="#" style="font-weight: bold"
+            >Attendance System</a
+          >
+          <button
+            class="navbar-toggler bg-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="homepage.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="attendancepage.html">Attendance</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div
+          class="row justify-content-center align-items-center"
+          style="height: 90vh"
+        >
+          <div class="maindiv col-12 col-sm-10 col-md-8 col-lg-6 p-4 p-sm-4">
+            <div class="row justify-content-around">
+              <div class="col-auto mb-3 mb-md-5 register border-bottom">Register</div>
+              <div class="col-auto mb-3 mb-md-5 login">login</div>
+            </div>
+            <form class="needs-validation" novalidate>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="floatingInput1"
+                  placeholder="first name"
+                  required
+                />
+                <label for="floatingInput1">First Name</label>
+                <div class="fnamediv">first name at least 3 letters</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="floatingInput2"
+                  placeholder="last name"
+                  required
+                />
+                <label for="floatingInput2">Last Name</label>
+                <div class="lnamediv">last name at least 3 letters</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  id="floatingInput3"
+                  placeholder="address"
+                  required
+                />
+                <label for="floatingInput3">Address</label>
+                <div class="addressdiv invalid-feedback">address required </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput4"
+                  placeholder="name@example.com"
+                  required
+                />
+                <label for="floatingInput4">Email</label>
+                <div class="emaildiv invalid-feedback">enter valid email</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="floatingInput5"
+                  placeholder="age"
+                  required
+                />
+                <label for="floatingInput5">Age</label>
+                <div class="agediv invalid-feedback">age required between 21 to 59</div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-6 mt-4">
+                  <input
+                    type="button"
+                    class="btn btn-primary"
+                    value="Register"
+                  />
+                </div>
+              </div>
+            </form>
+            <form class="needs-validation" novalidate style="display: none">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="first name"
+                  required
+                />
+                <label for="floatingInput6">Username</label>
+                <div id="usernamediv" class="invalid-feedback">
+                  invalid Username
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="last name"
+                  required
+                />
+                <label for="floatingInput7">Password</label>
+                <div id="passworddiv" class="invalid-feedback">
+                  invalid password
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-6 mt-4">
+                  <input
+                    type="button"
+                    class="btn btn-success w-100"
+                    value="Login"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/JQuery-3.3.1.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/homepage.js" type="module"></script>
+  </body>
+</html>
